@@ -8,18 +8,12 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	int sum1 = 0, sum2 = 0, total = 0;
 
 	if (tree == NULL)
-		return (1);
+		return (0);
 	/*Left sub-tree */
-	sum1 = binary_tree_height(tree->left) + 1;
-	/*right sub-tree */
-	sum2 = binary_tree_height(tree->right) + 1;
-	total = max(sum1, sum2);
-	if (tree->left == NULL && tree->right == NULL)
-		total = 0;
-	return (total);
+	return (1 + max(binary_tree_height(tree->left),
+					binary_tree_height(tree->right)));
 }
 /**
  * max - binary tree using post-order traversal
@@ -40,12 +34,15 @@ int max(int num1, int num2)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-    int sum1 = 0, sum2 = 0;
+	int sum1 = 0, sum2 = 0, total = 0;
 
 	if (tree == NULL)
 		return (0);
-    sum1 = binary_tree_height(tree->left);
-    sum2 = binary_tree_height(tree->right);
-    printf("altura izq: %d - altura der: %d\n", sum1, sum2);
-    return (sum1 - sum2);
+	sum1 = binary_tree_height(tree->left);
+	sum2 = binary_tree_height(tree->right);
+	printf("altura izq: %d - altura der: %d\n", sum1, sum2);
+	total = sum1 - sum2;
+	printf("altura dep: %d - altura dep: %d\n", sum1, total);
+
+	return (total);
 }
