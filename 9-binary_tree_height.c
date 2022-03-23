@@ -15,7 +15,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	/*Left sub-tree */
 	sum1 = binary_tree_height(tree->left) + 1;
 	/*right sub-tree */
-	sum1 = binary_tree_height(tree->right) + 1;
+	sum2 = binary_tree_height(tree->right) + 1;
 	total = max(sum1, sum2);
 	if (tree->left == NULL && tree->right == NULL)
 		total = 0;
