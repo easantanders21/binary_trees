@@ -9,6 +9,7 @@
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
 	int sum1 = 0, sum2 = 0, total = 0;
+
 	if (tree == NULL)
 		return (0);
 	/*Left sub-tree */
