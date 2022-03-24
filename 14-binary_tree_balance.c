@@ -46,9 +46,6 @@ int binary_tree_balance(const binary_tree_t *tree)
 		return (0);
 	sum1 = binary_tree_height(tree->left);
 	sum2 = binary_tree_height(tree->right);
-	printf("altura izq: %d - altura der: %d\n", sum1, sum2);
 	total = sum1 - sum2;
-	printf("altura dep: %d - altura dep: %d\n", sum1, total);
-
 	return (total);
 }
